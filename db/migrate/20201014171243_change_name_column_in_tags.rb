@@ -1,0 +1,6 @@
+class ChangeNameColumnInTags < ActiveRecord::Migration[5.2]
+  def change
+    remove_column :tags, :CreateTags
+    add_column :tags, :name, :string
+  end
+end
