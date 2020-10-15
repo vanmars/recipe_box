@@ -1,8 +1,12 @@
 class RecipesController < ApplicationController
   
   def index
-    @recipes = Recipe.all
     @tags = Tag.all
+    if params[:ingredient_search]
+      @recipes = Recipe.ingredient_search(params[:ingredient_search])
+    else
+      @recipes = Recipe.all
+    end
     render :index
   end
   

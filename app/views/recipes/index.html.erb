@@ -15,6 +15,14 @@
 <p><%= link_to "Create new recipe", new_recipe_path %></p>
 
 <hr>
+<form>
+  <label for="ingredient_search">Search by ingredient</label>
+  <input id="ingredient_search" name="ingredient_search" type="text">
+  <br>
+  <button type="submit">Search</button>
+</form>
+
+<hr>
 
 <h3>Find a Recipe By Category</h3>
 <% if @tags.any? %>
