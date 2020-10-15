@@ -6,7 +6,7 @@
   <% @tag.recipes.each do |recipe| %>
     <ul>
       <li>
-        <%= link_to recipe.name, tag_recipe_path(@tag, recipe) %>
+        <%= link_to recipe.name, recipe_path(recipe) %>
       </li>
     </ul>
   <% end %>
@@ -14,11 +14,11 @@
   <p>No recipes are listed for this tag.</p>
 <% end %>
 
-<p><%= link_to "Add a recipe", new_tag_recipe_path(@tag) %></p>
+<hr>
 
-<p><%= link_to "Edit", edit_tag_path(@tag) %></p>
+<p><%= link_to "Edit tag", edit_tag_path(@tag) %></p>
 <p><%= link_to "Delete tag", tag_path(@tag),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
 
-<p><%= link_to "Return to tags", tags_path %></p>
+<p><%= link_to "Recipes Home", recipes_path %></p>

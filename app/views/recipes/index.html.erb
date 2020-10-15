@@ -1,5 +1,6 @@
-<h1>Recipes</h1>
+<h1>Welcome to the Recipe Box!</h1>
 
+<h2>Recipes</h2>
 <% if @recipes.any? %>
   <ul>
     <% @recipes.each do |recipe| %>
@@ -13,7 +14,9 @@
 
 <p><%= link_to "Create new recipe", new_recipe_path %></p>
 
-<h1>Find a Recipe By Tag</h1>
+<hr>
+
+<h3>Find a Recipe By Category</h3>
 <% if @tags.any? %>
   <ul>
     <% @tags.each do |tag| %>
@@ -24,4 +27,4 @@
   <p>There are no tags yet.</p>
 <% end %>
 
-<p><%= link_to "Create new tag", new_tag_path %></p>
+<p><%= link_to "Create new recipe category", new_tag_path %></p>

@@ -1,10 +1,35 @@
 <h1><%= @recipe.name %></h1>
-<h6>Rating: <%= @recipe.rating %></h6>
+<h4>Rating: <%= @recipe.rating %></h4>
+
+<% if @recipe.tags %>
+  <h4>Categories: 
+    <% @recipe.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
+  </h4>
+<% end %>
+<hr>
+
+<% if @tags.any? %>
+  <h6>Add a category tag to your recipe!</h6>
+
+  <form action="/recipes/<%= @recipe.id %>" method="get">
+    <select name="tag_to_add" id="tag_to_add">
+      <% @tags.each do |tag| %>
+        <option value =<%= tag.id %>><%= tag.name%></option>
+        <% end %>
+    </select>
+    <button type="submit">Add category tag</button>
+  </form>
+  
+<% end %>
+<hr>
+
 <h3>Ingredients: <%= @recipe.ingredients %></h3>
 <h3>Instructions: <%= @recipe.instructions %></h3>
+<hr>
 
-
-<p><%= link_to "Edit", edit_recipe_path(@recipe) %></p>
+<p><%= link_to "Edit recipe", edit_recipe_path(@recipe) %></p>
 <p><%= link_to "Delete recipe", recipe_path(@recipe),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
