@@ -14,15 +14,21 @@
 
 <p><%= link_to "Create new recipe", new_recipe_path %></p>
 
-<hr>
+<%# <hr>
 <form>
   <label for="ingredient_search">Search by ingredient</label>
   <input id="ingredient_search" name="ingredient_search" type="text">
   <br>
   <button type="submit">Search</button>
 </form>
+<hr> %>
 
-<hr>
+<%= form_with(url: recipes, method: "get") do %>
+  <%= label_tag(:ingredient_search, "Search Ingredients") %>
+  <%= text_field_tag(:ingredient_search) %>
+  <%= submit_tag("Search") %>
+<% end %>  
+
 
 <hr>
 <form>

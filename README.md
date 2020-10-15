@@ -3,11 +3,14 @@
 
 #### _The online home of your culinary creations, 10/14/2020_
 
-#### By _**, Vanessa Stewart, Joseph Karnafel, Brian Harvey**_
+#### By _**Vanessa Stewart, Joseph Karnafel, Brian Harvey**_
 
 ## Description
 
 _This app allows users to upload their favorite recipes, complete with full CRUD/L functionailty for recipes. The tag function also allows users to sort and search Recipe Box for items with that tag._
+
+## Data Table Visualization
+<img src="./app/assets/images/tables.png">
 
 ## Setup/Installation Requirements
 

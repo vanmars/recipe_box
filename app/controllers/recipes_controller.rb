@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   
   def index
     @tags = Tag.all
-    if params[:ingredient_search]
+    if params[:ingredient_search] #if someone searched
       @recipes = Recipe.ingredient_search(params[:ingredient_search])
     elsif params[:highest_rating]
       @recipes = Recipe.highest_rating
