@@ -4,6 +4,8 @@ class RecipesController < ApplicationController
     @tags = Tag.all
     if params[:ingredient_search]
       @recipes = Recipe.ingredient_search(params[:ingredient_search])
+    elsif params[:highest_rating]
+      @recipes = Recipe.highest_rating
     else
       @recipes = Recipe.all
     end
